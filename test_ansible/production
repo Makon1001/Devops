@@ -1,0 +1,15 @@
+[poll]
+poll ansible_host=192.168.0.20 ansible_user=manu ansible_become_password=manu
+
+[redis]
+redis ansible_host=192.168.0.21 ansible_user=manu ansible_become_password=manu
+
+[worker]
+worker ansible_host=192.168.0.52 ansible_user=manu ansible_become_password=manu
+
+[postgres]
+postgres ansible_host=192.168.0.53 ansible_user=manu ansible_become_password=manu
+
+[result]
+result ansible_host=192.168.0.54 ansible_user=manu ansible_become_password=manu
+

@@ -1,0 +1,9 @@
+---
+
+- name: Node | Install 
+  include: 
+    install.yml
+
+- name: Node | Copy poll.service
+  include: 
+    copy.yml

@@ -1,0 +1,16 @@
+---
+
+- name: DEPLOY | copy server /etc/systemd/system
+  copy: 
+    src: /etc/systemd/system/
+    dest: /etc/systemd/system-default
+    directory_mode: 
+    owner: manu
+    group: manu
+    mode: preserve 
+    remote_src: yes
+
+- name : DEPLAY | start myservice
+  systemd:
+    state: started
+    name: myservice

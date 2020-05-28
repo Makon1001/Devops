@@ -1,0 +1,19 @@
+---
+
+- name: DEPLOY | push app.zip from master to server
+  copy:
+    remote_src: no
+    src: ../files/app.zip
+    dest: /home/manu/app/app.zip
+    mode: preserve
+    owner: manu
+
+- name: DEPLOY | unarchive app.zip
+  unarchive:
+    src: /home/manu/app/app.zip
+    dest: /home/manu/app
+    remote_src: yes
+
+- name: DEPLOY | install dependencies based on package.json
+  npm: 
+    path: /home/manu/app/T-DOP-600_bootstrap_ansible_applications

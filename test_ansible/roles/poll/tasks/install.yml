@@ -1,0 +1,7 @@
+---
+
+- name: NODE | install 
+  apt:
+    pkg:
+      - nodejs
+      - npm

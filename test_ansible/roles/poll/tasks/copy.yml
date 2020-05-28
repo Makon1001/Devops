@@ -1,0 +1,9 @@
+---
+
+- name: Copy poll.service in app
+  copy:
+    src: ../files/poll.service
+    dest: /etc/poll.servcie
+    owner: manu
+    group: manu
+    mode: '0644'

@@ -1,0 +1,7 @@
+---
+
+#- name: DEPLOY | copy systemd/system directory
+#  include: service.yml
+
+- name: DEPLOY | upload app.zip
+  include: app.yml

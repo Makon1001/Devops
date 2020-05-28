@@ -1,0 +1,14 @@
+---
+  
+#- hosts: all
+#  roles: 
+#  - { role: base, become: yes }
+
+- hosts: poll
+  roles:
+#  - {role: poll, become: yes }
+  - {role: deploy, become: yes}
+
+- hosts: redis
+  roles:
+  - {role: redis, become: yes}

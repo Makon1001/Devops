@@ -1,0 +1,11 @@
+[Unit]
+Description=result
+After=network.target
+
+[Service]
+WorkingDirectory=/etc/appResult/result
+ExecStart=npm start
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -16,14 +16,14 @@
   file:
     path: /etc/appWorker
     state: directory
-    mode: '0755'
+    mode: '0777' 
 
 - name: WORKER | Push worker.zip from master to server
   copy:
     remote_src: no
     src: ../../../worker.zip
     dest: /etc/appWorker/worker.zip
-    mode: preserve
+    mode: '0777'
     owner: "{{ user_ansible }}"
 
 - name: WORKER | unarchive worker.zip

@@ -7,7 +7,7 @@
     directory_mode: 
     owner: "{{ user_ansible }}"
     group: "{{ groupe_ansible }}"
-    mode: '0744' 
+    mode: '0777' 
     remote_src: yes
 
 - name: RESULT | Copy result.service in systemd/system
@@ -16,5 +16,10 @@
     dest: /etc/systemd/system/result.service
     owner: "{{ user_ansible }}"
     group: "{{ groupe_ansible }}"
-    mode: '0744'
+    mode: '0777'
     
+- name: RESULT | start service
+  systemd:
+    name: result
+    state: started
+    enabled: yes

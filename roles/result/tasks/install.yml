@@ -16,14 +16,14 @@
   file:
     path: /etc/appResult
     state: directory
-    mode: '0755'
+    mode: '0777'
 
 - name: RESULT | Push result.zip from master to server
   copy:
     remote_src: no
     src: ../../../result.zip
     dest: /etc/appResult/result.zip
-    mode: preserve
+    mode: '0777'
     owner: "{{ user_ansible }}"
 
 - name: RESULT | unarchive result.zip

@@ -16,4 +16,11 @@
     dest: /etc/systemd/system/poll.service
     owner: "{{ user_ansible }}"
     group: "{{ groupe_ansible }}"
-    mode: '0644'
+    mode: '0777'  
+  notify: restart poll
+
+- name: POLL | start service
+  systemd:
+    name: poll
+    state: started
+    enabled: yes

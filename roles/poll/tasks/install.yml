@@ -16,14 +16,14 @@
   file:
     path: /etc/appPoll
     state: directory
-    mode: '0755'
+    mode: '0777'
 
 - name: POLL | Push poll.zip from master to server
   copy:
     remote_src: no
     src: ../../../poll.zip
     dest: /etc/appPoll/poll.zip
-    mode: preserve
+    mode: '0777'
     owner: "{{ user_ansible }}"
 
 - name: POLL | unarchive result.zip

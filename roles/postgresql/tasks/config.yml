@@ -14,14 +14,15 @@
     name="{{ db_user }}"
     password="{{ db_password }}"
     priv=ALL
+  notify: restart postgres
     
 
-- name: POSTGRES |  Ensure user has access to the database
-  become: true
-  become_user: postgres
-  postgresql_user: 
-    db="{{ db_name }}"
-    name="{{ db_user }}"
-    password="{{ db_password }}"
-    priv=ALL
+# - name: POSTGRES |  Ensure user has access to the database
+#   become: true
+#   become_user: postgres
+#   postgresql_user: 
+#     db="{{ db_name }}"
+#     name="{{ db_user }}"
+#     password="{{ db_password }}"
+#     priv=ALL
     

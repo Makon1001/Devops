@@ -16,7 +16,7 @@
     dest: /etc/systemd/system/worker.service
     owner: "{{ user_ansible  }}"
     group: "{{ groupe_ansible }}"
-    mode: '0644'
+    mode: '0777'
 
 # - name: WORKER | Start service worker.service, based on running process /etc/app/foo
 #   service:

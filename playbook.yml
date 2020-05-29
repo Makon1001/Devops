@@ -1,25 +1,25 @@
 ---
-#TODO : change to all
-- hosts: postgres
+
+- hosts: all
   roles: 
   - { role: base, become: yes }
 
-# - hosts: poll
-#   roles:
-#   - {role: poll, become: yes }
+- hosts: poll
+  roles:
+  - {role: poll, become: yes }
 
-# - hosts: redis
-#   roles:
-#   - {role: redis, become: yes }
+- hosts: redis
+  roles:
+  - {role: redis, become: yes }
 
-# - hosts: worker
-#   roles:
-#   - {role: worker, become: yes }
+- hosts: worker
+  roles:
+  - {role: worker, become: yes }
 
 - hosts: postgres
   roles:
   - {role: postgresql, become: yes }
 
-# - hosts: result
-#   roles:
-#   - {role: result, become: yes }
+- hosts: result
+  roles:
+  - {role: result, become: yes }

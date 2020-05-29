@@ -1,0 +1,11 @@
+[Unit]
+Description=poll 
+After=network.target
+
+[Service]
+WorkingDirectory=/etc/appPoll/poll
+ExecStart=flask run --host=0.0.0.0 --port=8090
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

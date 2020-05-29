@@ -1,0 +1,9 @@
+---
+
+- name: WORKER | Install 
+  include: 
+    install.yml
+
+- name: WORKER | gestion service
+  include: 
+    service.yml

@@ -1,0 +1,9 @@
+--- 
+
+- name: POSTRGRES | Install PostgreSQL
+  apt: 
+    pkg:
+    - postgresql
+    - postgresql-contrib
+    - libpq-dev
+    - python-psycopg2

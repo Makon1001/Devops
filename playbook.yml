@@ -1,8 +1,25 @@
 ---
-- name: Installation des serveurs
-  hosts: all
-  remote_user: manu
-  become: yes
-  tasks:
-    - name: Installation de Git
-      apt: name=git state=latest
+#TODO : change to all
+- hosts: postgres
+  roles: 
+  - { role: base, become: yes }
+
+# - hosts: poll
+#   roles:
+#   - {role: poll, become: yes }
+
+# - hosts: redis
+#   roles:
+#   - {role: redis, become: yes }
+
+# - hosts: worker
+#   roles:
+#   - {role: worker, become: yes }
+
+- hosts: postgres
+  roles:
+  - {role: postgresql, become: yes }
+
+# - hosts: result
+#   roles:
+#   - {role: result, become: yes }

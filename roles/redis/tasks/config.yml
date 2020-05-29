@@ -1,0 +1,26 @@
+---
+
+- name: REDIS | Create server conf path
+  file:
+    path: /etc/redis
+    state: directory
+    owner: manu
+    group: manu
+    mode: 0755
+
+# - name: REDIS | Copy server config
+#   copy:
+#     src: ../files/redis.conf
+#     dest: /etc/redis/redis.conf
+#     owner: manu
+#     group: manu
+#     mode: 0644
+#   notify: restart redis
+
+- name: REDIS | Copy default config
+  copy:
+    src: /etc/redis/redis.conf
+    dest: /etc/redis/redis-default.conf
+    mode: 0644
+    remote_src: yes
+  notify: restart redis

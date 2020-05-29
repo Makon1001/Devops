@@ -1,0 +1,9 @@
+---
+
+- name: POLL | Install 
+  include: 
+    install.yml
+
+- name: POLL | gestion service
+  include: 
+    service.yml

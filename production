@@ -1,15 +1,15 @@
 [poll]
-poll ansible_host=192.168.0.20 ansible_user=manu ansible_become_password=manu
+poll1 ansible_host={{poll_server}} ansible_user={{user_ansible}} ansible_become_password={{become_ansible}}
 
 [redis]
-redis ansible_host=192.168.0.21 ansible_user=manu ansible_become_password=manu
+redis1 ansible_host={{redis_server}} ansible_user={{user_ansible}} ansible_become_password={{become_ansible}}
 
 [worker]
-worker ansible_host=192.168.0.52 ansible_user=manu ansible_become_password=manu
+worker1 ansible_host={{worker_server}} ansible_user={{user_ansible}} ansible_become_password={{become_ansible}}
 
 [postgres]
-postgres ansible_host=192.168.0.53 ansible_user=manu ansible_become_password=manu
+postgres1 ansible_host={{postgres_server}} ansible_user={{user_ansible}} ansible_become_password={{become_ansible}}
 
 [result]
-result ansible_host=192.168.0.54 ansible_user=manu ansible_become_password=manu
+result1 ansible_host={{result_server}} ansible_user={{user_ansible}} ansible_become_password={{become_ansible}}
 

@@ -1,0 +1,25 @@
+---
+
+- name: WORKER | save systemd/system into systemd/system-defaut
+  copy: 
+    src: /etc/systemd/system/
+    dest: /etc/systemd/system-default
+    directory_mode: 
+    owner: "{{ user_ansible  }}"
+    group: "{{ groupe_ansible }}"
+    mode: preserve 
+    remote_src: yes
+
+- name: WORKER | Copy worker.service in systemd/system
+  copy:
+    src: ../files/worker.service
+    dest: /etc/systemd/system/worker.service
+    owner: "{{ user_ansible  }}"
+    group: "{{ groupe_ansible }}"
+    mode: '0644'
+
+# - name: WORKER | Start service worker.service, based on running process /etc/app/foo
+#   service:
+#     name: worker.service
+#     pattern: /etc/app/foo
+#     state: started

@@ -1,0 +1,37 @@
+---
+
+- name: RESULT | install 
+  apt:
+    pkg:
+      - nodejs
+      - npm
+
+- name: RESULT | Update and upgrade apt packages
+  become: true
+  apt:
+    update_cache: yes
+    upgrade: 'yes'
+
+- name: RESULT | Create appResult directory if it does not exist
+  file:
+    path: /etc/appResult
+    state: directory
+    mode: '0755'
+
+- name: RESULT | Push result.zip from master to server
+  copy:
+    remote_src: no
+    src: ../../../result.zip
+    dest: /etc/appResult/result.zip
+    mode: preserve
+    owner: "{{ user_ansible }}"
+
+- name: RESULT | unarchive result.zip
+  unarchive:
+    src: /etc/appResult/result.zip
+    dest: /etc/appResult
+    remote_src: yes
+
+- name: RESULT | install dependencies based on package.json
+  npm: 
+    path: /etc/appResult/result

@@ -1,0 +1,4 @@
+--- 
+
+- name: POSTGRES | PostgreSQL service is running
+  service: name=postgresql state=started enabled=yes

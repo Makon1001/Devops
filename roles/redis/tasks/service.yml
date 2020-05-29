@@ -1,0 +1,8 @@
+---
+
+- name: REDIS | Configuring service
+  systemd:
+    name: redis-server
+    state: started
+    enabled: yes
+    daemon_reload: yes

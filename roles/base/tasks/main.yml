@@ -1,0 +1,21 @@
+---
+
+- name: BASE | update all apt packages
+  apt:
+    upgrade: dist
+  become: true
+
+- name: install essential packages
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - emacs-nox
+    - git
+    - curl
+    - unzip
+    - nano
+
+- name: Set timezone to Europe/Paris
+  timezone:
+    name: Europe/Paris

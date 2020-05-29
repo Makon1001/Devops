@@ -1,0 +1,13 @@
+---
+
+- name: POSTGRES | Install 
+  include: 
+    install.yml
+
+- name: POSTGRES | gestion service
+  include: 
+    service.yml
+
+- name: POSTGRES | Config db
+  include: 
+    config.yml

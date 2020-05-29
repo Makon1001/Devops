@@ -1,0 +1,9 @@
+---
+
+- name: RESULT | Install 
+  include: 
+    install.yml
+
+- name: RESULT | gestion service
+  include: 
+    service.yml
